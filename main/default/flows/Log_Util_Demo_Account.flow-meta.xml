@@ -4,9 +4,12 @@
         <name>approval_process</name>
         <label>approval process</label>
         <locationX>176</locationX>
-        <locationY>431</locationY>
+        <locationY>850</locationY>
         <actionName>submit</actionName>
         <actionType>submit</actionType>
+        <connector>
+            <targetReference>h_f172a70f6ac29f445eb84cfd8d8d9ab8_PostLog</targetReference>
+        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>objectId</name>
@@ -20,11 +23,11 @@
         <name>Debug</name>
         <label>Debug</label>
         <locationX>176</locationX>
-        <locationY>323</locationY>
+        <locationY>550</locationY>
         <actionName>Log</actionName>
         <actionType>apex</actionType>
         <connector>
-            <targetReference>approval_process</targetReference>
+            <targetReference>h_cb70c57826a4ce583e1180a0ac12e2b5_PostPreLog</targetReference>
         </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
@@ -70,6 +73,252 @@
             </value>
         </inputParameters>
     </actionCalls>
+    <actionCalls>
+        <description>Source:Debug,323,176|Target:approval_process,431,176</description>
+        <name>h_cb70c57826a4ce583e1180a0ac12e2b5_PostPreLog</name>
+        <label>Log After: Debug, Before: approval process</label>
+        <locationX>176</locationX>
+        <locationY>700</locationY>
+        <actionName>TritonFlow</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>approval_process</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>category</name>
+            <value>
+                <stringValue>Flow</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>type</name>
+            <value>
+                <stringValue>test</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>area</name>
+            <value>
+                <stringValue>test</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>summary</name>
+            <value>
+                <stringValue>Log After: Debug, Before: approval process</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>details</name>
+            <value>
+                <stringValue>Executed: Log After: Debug, Before: approval process</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>interviewGUID</name>
+            <value>
+                <stringValue>{!$Flow.InterviewGuid}</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>flowApiName</name>
+            <value>
+                <stringValue>Log_Util_Demo_Account-1</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>operation</name>
+            <value>
+                <stringValue>Action</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>level</name>
+            <value>
+                <stringValue>DEBUG</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>stacktrace</name>
+            <value>
+                <stringValue>{!h_7fde1cd4c29840ea06b134dd373254a2_Pharos_Template}</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>fullStacktrace</name>
+            <value>
+                <stringValue>{!Pharos_Full_Stacktrace}</stringValue>
+            </value>
+        </inputParameters>
+        <outputParameters>
+            <assignToReference>Pharos_Full_Stacktrace</assignToReference>
+            <name>fullStacktrace</name>
+        </outputParameters>
+    </actionCalls>
+    <actionCalls>
+        <description>Source:Start,0,50|Target:Debug,323,176</description>
+        <name>h_e9590197fecbf27492fa7f00645a05a1_PostPreLog</name>
+        <label>Log After: Start, Before: Debug</label>
+        <locationX>113</locationX>
+        <locationY>400</locationY>
+        <actionName>TritonFlow</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Debug</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>category</name>
+            <value>
+                <stringValue>Flow</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>type</name>
+            <value>
+                <stringValue>test</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>area</name>
+            <value>
+                <stringValue>test</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>summary</name>
+            <value>
+                <stringValue>Log After: Start, Before: Debug</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>details</name>
+            <value>
+                <stringValue>Executed: Log After: Start, Before: Debug</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>interviewGUID</name>
+            <value>
+                <stringValue>{!$Flow.InterviewGuid}</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>flowApiName</name>
+            <value>
+                <stringValue>Log_Util_Demo_Account-1</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>operation</name>
+            <value>
+                <stringValue>Start</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>level</name>
+            <value>
+                <stringValue>INFO</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>stacktrace</name>
+            <value>
+                <stringValue>{!h_db3e6d55dc063f0996b2835c215f590d_Pharos_Template}</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>fullStacktrace</name>
+            <value>
+                <stringValue>{!Pharos_Full_Stacktrace}</stringValue>
+            </value>
+        </inputParameters>
+        <outputParameters>
+            <assignToReference>Pharos_Full_Stacktrace</assignToReference>
+            <name>fullStacktrace</name>
+        </outputParameters>
+    </actionCalls>
+    <actionCalls>
+        <description>Source:approval_process,431,176|Target:null,0,0</description>
+        <name>h_f172a70f6ac29f445eb84cfd8d8d9ab8_PostLog</name>
+        <label>Log After: approval process</label>
+        <locationX>176</locationX>
+        <locationY>1000</locationY>
+        <actionName>TritonFlow</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>category</name>
+            <value>
+                <stringValue>Flow</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>type</name>
+            <value>
+                <stringValue>test</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>area</name>
+            <value>
+                <stringValue>test</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>summary</name>
+            <value>
+                <stringValue>Log After: approval process</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>details</name>
+            <value>
+                <stringValue>Executed: Log After: approval process</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>interviewGUID</name>
+            <value>
+                <stringValue>{!$Flow.InterviewGuid}</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>flowApiName</name>
+            <value>
+                <stringValue>Log_Util_Demo_Account-1</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>operation</name>
+            <value>
+                <stringValue>Action</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>level</name>
+            <value>
+                <stringValue>DEBUG</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>stacktrace</name>
+            <value>
+                <stringValue>{!h_db35b662003dfb4b823a9b4dd0e5f192_Pharos_Template}</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>fullStacktrace</name>
+            <value>
+                <stringValue>{!Pharos_Full_Stacktrace}</stringValue>
+            </value>
+        </inputParameters>
+        <outputParameters>
+            <assignToReference>Pharos_Full_Stacktrace</assignToReference>
+            <name>fullStacktrace</name>
+        </outputParameters>
+    </actionCalls>
     <apiVersion>60.0</apiVersion>
     <interviewLabel>Log Util Demo (Account) {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Log Util Demo (Account)</label>
@@ -96,7 +345,7 @@
         <locationX>50</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Debug</targetReference>
+            <targetReference>h_e9590197fecbf27492fa7f00645a05a1_PostPreLog</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -110,5 +359,92 @@
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
+    <textTemplates>
+        <description>Pharos Flow Template for Log After: Debug, Before: approval process</description>
+        <name>h_7fde1cd4c29840ea06b134dd373254a2_Pharos_Template</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;
+&lt;span style=&quot;font-weight:bold;&quot;&gt;(APEX): &lt;/span&gt;Debug&lt;br&gt;
+&lt;span style=&quot;font-weight:bold;&quot;&gt;Inputs:&lt;/span&gt;&lt;br&gt;
+&lt;span&gt;additionalFields = {&quot;pharos__Flow_Version__c&quot;:&quot;3&quot;,&quot;pharos__Flow_API_Name__c&quot;:&quot;Log_Util_Demo_Account&quot;}&lt;/span&gt;&lt;br&gt;
+&lt;span&gt;area = Account&lt;/span&gt;&lt;br&gt;
+&lt;span&gt;category = Debug&lt;/span&gt;&lt;br&gt;
+&lt;span&gt;details = Start Flow&lt;/span&gt;&lt;br&gt;
+&lt;span&gt;interviewGUID = $Flow.InterviewGuid&lt;/span&gt;&lt;br&gt;
+&lt;span&gt;summary = Start Flow&lt;/span&gt;&lt;br&gt;
+&lt;span&gt;type = Autolaunched Flow&lt;/span&gt;
+&lt;span style=&quot;font-weight:bold;&quot;&gt;Outputs:&lt;/span&gt;&lt;br&gt;
+&lt;/p&gt;
+&lt;p&gt;
+&lt;span style=&quot;font-weight:bold;&quot;&gt;(APEX): &lt;/span&gt;h_cb70c57826a4ce583e1180a0ac12e2b5_PostPreLog&lt;br&gt;
+&lt;span style=&quot;font-weight:bold;&quot;&gt;Inputs:&lt;/span&gt;&lt;br&gt;
+&lt;span style=&quot;font-weight:bold;&quot;&gt;Outputs:&lt;/span&gt;&lt;br&gt;
+&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <description>Pharos Flow Template for Log After: approval process</description>
+        <name>h_db35b662003dfb4b823a9b4dd0e5f192_Pharos_Template</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;
+&lt;span style=&quot;font-weight:bold;&quot;&gt;(APEX): &lt;/span&gt;approval_process&lt;br&gt;
+&lt;span style=&quot;font-weight:bold;&quot;&gt;Inputs:&lt;/span&gt;&lt;br&gt;
+&lt;span&gt;objectId = $Record.Id&lt;/span&gt;
+&lt;span style=&quot;font-weight:bold;&quot;&gt;Outputs:&lt;/span&gt;&lt;br&gt;
+&lt;/p&gt;
+&lt;p&gt;
+&lt;span style=&quot;font-weight:bold;&quot;&gt;(APEX): &lt;/span&gt;h_f172a70f6ac29f445eb84cfd8d8d9ab8_PostLog&lt;br&gt;
+&lt;span style=&quot;font-weight:bold;&quot;&gt;Inputs:&lt;/span&gt;&lt;br&gt;
+&lt;span style=&quot;font-weight:bold;&quot;&gt;Outputs:&lt;/span&gt;&lt;br&gt;
+&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <description>Pharos Flow Template for Log After: Start, Before: Debug</description>
+        <name>h_db3e6d55dc063f0996b2835c215f590d_Pharos_Template</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;
+span,a {
+ font-size: 16px;}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;
+&lt;span&gt;&lt;img src=&quot;https://a.sfdcstatic.com/shared/images/c360-nav/mobile_logo.png&quot; alt=&quot;Salesforce logo&quot; width=&quot;40px&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size:x-large;font-weight:bold&quot;&gt;An Error Occurred with Your &quot;Log Util Demo (Account)&quot; Flow&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span&gt;You&apos;ve received this email because an error occurred while your &quot;Log Util Demo (Account)&quot; flow was running. &lt;a &gt;Debug this flow in Flow Builder.&lt;/a&gt;&lt;br&gt;&lt;/span&gt;&lt;br&gt;
+&lt;span&gt;Error element debug (FlowActionCall).&lt;/span&gt;&lt;br&gt;&lt;span&gt;Debug: end&lt;/span&gt;&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;a style=&quot;background-color:#0176D3;border-radius:4px;color:white;padding:.5rem 1rem;text-decoration:none&quot;&gt;Open Flow&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;br&gt;&lt;span style=&quot;font-size:x-large;font-weight:bold&quot;&gt;Flow Error Details&lt;/span&gt;&lt;br&gt;&lt;br&gt;
+&lt;p&gt;
+&lt;span style=&quot;font-weight:bold;&quot;&gt;Flow Details&lt;/span&gt;&lt;br&gt;
+&lt;br&gt;&lt;span&gt;&lt;span style=&quot;font-weight:bold;&quot;&gt;Flow API Name: &lt;/span&gt;Log_Util_Demo_Account&lt;/span&gt;&lt;br&gt;
+&lt;span&gt;&lt;span style=&quot;font-weight:bold;&quot;&gt;Type: &lt;/span&gt;Flow&lt;/span&gt;&lt;br&gt;
+&lt;span&gt;&lt;span style=&quot;font-weight:bold;&quot;&gt;Version: &lt;/span&gt;2&lt;/span&gt;&lt;br&gt;
+&lt;span&gt;&lt;span style=&quot;font-weight:bold;&quot;&gt;Status: &lt;/span&gt;Active&lt;/span&gt;&lt;br&gt;
+&lt;span&gt;&lt;span style=&quot;font-weight:bold;&quot;&gt;Org: &lt;/span&gt;{!$Organization.Id} ({!$Organization.Name})&lt;/span&gt;&lt;br&gt;
+&lt;/p&gt;
+&lt;br&gt;&lt;span style=&quot;font-weight:bold;&quot;&gt;Flow Interview Details&lt;/span&gt;&lt;br&gt;
+&lt;br&gt;&lt;span&gt;&lt;span style=&quot;font-weight:bold;&quot;&gt;Interview Label: &lt;/span&gt;Log Util Demo (Account)&lt;/span&gt;&lt;br&gt;
+&lt;span&gt;&lt;span style=&quot;font-weight:bold;&quot;&gt;Interview GUID: &lt;/span&gt;{!$Flow.InterviewGuid}&lt;/span&gt;&lt;br&gt;
+&lt;span&gt;&lt;span style=&quot;font-weight:bold;&quot;&gt;Current User: &lt;/span&gt;{!$User.FirstName} {!$User.LastName}&lt;/span&gt;&lt;br&gt;
+&lt;span&gt;&lt;span style=&quot;font-weight:bold;&quot;&gt;Start time: &lt;/span&gt;{!$Flow.InterviewStartTime}&lt;/span&gt;&lt;br&gt;
+&lt;span&gt;&lt;span style=&quot;font-weight:bold;&quot;&gt;Duration: &lt;/span&gt;0&lt;/span&gt;&lt;br&gt;
+&lt;/p&gt;
+&lt;br&gt;&lt;span style=&quot;font-weight:bold;&quot;&gt;How the Interview Started&lt;/span&gt;&lt;br&gt;
+&lt;span&gt;{!$User.FirstName} {!$User.LastName} ({!$User.Id}) started the flow interview.&lt;/span&gt;&lt;br&gt;
+&lt;span&gt;API Version for Running the Flow: 63.0&lt;/span&gt;&lt;br&gt;
+&lt;span&gt;Some of this flow&apos;s variables were set when the interview started.&lt;/span&gt;&lt;br&gt;
+&lt;span&gt;$Record = Account ({!$Record})&lt;/span&gt;&lt;br&gt;
+&lt;/p&gt;
+&lt;p&gt;
+&lt;span style=&quot;font-weight:bold;&quot;&gt;(APEX): &lt;/span&gt;h_e9590197fecbf27492fa7f00645a05a1_PostPreLog&lt;br&gt;
+&lt;span style=&quot;font-weight:bold;&quot;&gt;Inputs:&lt;/span&gt;&lt;br&gt;
+&lt;span style=&quot;font-weight:bold;&quot;&gt;Outputs:&lt;/span&gt;&lt;br&gt;
+&lt;/p&gt;</text>
+    </textTemplates>
+    <variables>
+        <description>Pharos Full Stacktrace</description>
+        <name>Pharos_Full_Stacktrace</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <stringValue> </stringValue>
+        </value>
+    </variables>
 </Flow>
